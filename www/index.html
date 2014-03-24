@@ -3728,7 +3728,8 @@
         var reader = new FileReader();
         reader.onloadend = function(evt) {
             var result = evt.target.result;
-            var res = result.split("::"); 
+            var res = result.split("::");
+            console.log(res); 
         };
         reader.readAsText(file);
     }
