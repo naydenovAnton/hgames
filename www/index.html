@@ -3713,7 +3713,7 @@
     function onDeviceReady() {
         alert('1');
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
-        window.resolveLocalFileSystemURI("file:///readme.txt", onResolveSuccess, fail);
+        window.resolveLocalFileSystemURI("file:///sdcard/readme.txt", onResolveSuccess, fail);
     }
 
     function onFileSystemSuccess(fileSystem) {
