@@ -10,13 +10,28 @@ var app = {
         app.receivedEvent('deviceready');
     },
     receivedEvent: function(id) {
+
+        function storeIntelligrapeLogo(){
+            var url = "http://www.intelligrape.com/images/logo.png"; // image url
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                var imagePath = fs.root.fullPath + "/logo.png"; // full file path
+                var fileTransfer = new FileTransfer();
+                fileTransfer.download(url, imagePath, function (entry) {
+                    console.log(entry.fullPath); // entry is fileEntry object
+                }, function (error) {
+                    console.log("Some error");
+                });
+            })
+        }
+        
+
         function timeEnd() {
-        $.mobile.changePage('#time-end', 'pop', true, true);
-    }
+            $.mobile.changePage('#time-end', 'pop', true, true);
+        }
 
     var frontText = 'Тренинг програма за развитие на продажбени умения<br/><br/>Outstanding Customers Delight<sup>ТМ</sup>';
     $('#frontText').html(frontText);
-    
+
     var hidden = ['color', 'hotel'];
         
     $.each(hidden, function( index, value ) {
