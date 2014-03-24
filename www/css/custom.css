@@ -1,0 +1,39 @@
+#color {
+	background-image: url(../img/color_back.png) !important;
+	background-position: center center !important;
+}
+
+#color-clips-buy, #color-clips-sell {
+	background-image: url(../img/clips_back.png) !important;
+	background-position: center center !important;
+}
+
+#hotel-customer {
+	background-image: url(../img/vacation_back.png) !important;
+	background-position: center center !important;
+}
+
+#hotel-agency {
+	background-image: url(../img/vacation_back_a.png) !important;
+	background-position: center center !important;
+}
+
+#appartament {
+	background-image: url(../img/viena_back_a.png) !important;
+	background-position: center 40px !important;
+}
+
+
+.trip_back {
+	background-image: url(../img/trip-back.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+}
+
+
+#panel-fixed-page1 {
+	background-image: url(../img/background.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+ 	background-size:314px 142px !important;
+}
