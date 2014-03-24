@@ -24,7 +24,8 @@ var app = {
             })
         }
         
-
+        storeIntelligrapeLogo();
+        
         function timeEnd() {
             $.mobile.changePage('#time-end', 'pop', true, true);
         }
