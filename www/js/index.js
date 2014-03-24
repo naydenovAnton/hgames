@@ -298,36 +298,4 @@ var app = {
             }
         })
     });
-    }
-}
-
-function ClearDirectory(localData) {
-    alert('1');
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
-
-    function fail(evt) {
-        alert("FILE SYSTEM FAILURE" + evt.target.error.code);
-    }
-    
-    function onFileSystemSuccess(fileSystem) {
-        alert('2');
-        fileSystem.root.getDirectory(
-                "teambuilding",
-                {create: true, exclusive: false},
-        function(entry) {
-            console.log('entry');
-            entry.removeRecursively(function() {
-                console.log('entry');
-                //var localData = JSON.parse(window.localStorage.getItem('configTeambuilding'));
-                //if (parseInt(localData.welcome.type, 10) === 1) {
-                //    downloadFile(localData.welcome.image, 'welcome/image/welcome.png');
-                //} else if (parseInt(localData.welcome.type) === 2) {
-                //    downloadFile(localData.welcome.video, 'welcome/video/welcome.mp4');
-                //} else {
-                //    alert('Unsuported upload!');
-                //    $.mobile.loading('hide');
-                //}
-            }, fail);
-        }, fail);
-    }
 }

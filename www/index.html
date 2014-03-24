@@ -1332,12 +1332,12 @@
         <strong><h4><span class="sub">Сватбен каталог:</span></h4></strong>
 
         <div style="width: 100%;">
-            <img src="img/wedding/catalog1.png" style="width: 100%"/>
-            <img src="img/wedding/catalog2.png" style="width: 100%"/>
-            <img src="img/wedding/catalog3.png" style="width: 100%"/>
-            <img src="img/wedding/catalog4.png" style="width: 100%"/>
-            <img src="img/wedding/catalog5.png" style="width: 100%"/>
-            <img src="img/wedding/catalog6.png" style="width: 100%"/>
+            <img src="img/wedding/catalog1.jpg" style="width: 100%"/>
+            <img src="img/wedding/catalog2.jpg" style="width: 100%"/>
+            <img src="img/wedding/catalog3.jpg" style="width: 100%"/>
+            <img src="img/wedding/catalog4.jpg" style="width: 100%"/>
+            <img src="img/wedding/catalog5.jpg" style="width: 100%"/>
+            <img src="img/wedding/catalog6.jpg" style="width: 100%"/>
         </div>
         <div style="clear: both"></div>
     </div>
@@ -3744,6 +3744,7 @@
         console.log(evt.target.error.code);
     }
     */
+
     function timeEnd() {
         $.mobile.changePage('#time-end', 'pop', true, true);
     }
@@ -3751,7 +3752,7 @@
     var frontText = 'Тренинг програма за развитие на продажбени умения<br/><br/>Outstanding Customers Delight<sup>ТМ</sup>';
     $('#frontText').html(frontText);
 
-    var hidden = ['color', 'hotel'];
+    var hidden = [];
         
     $.each(hidden, function( index, value ) {
         $('a[href="#' + value + '"]').closest('li').remove();
@@ -4029,7 +4030,6 @@
             }
         })
     });
-    }
 
 </script>
 </body>
