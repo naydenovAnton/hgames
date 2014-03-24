@@ -12,7 +12,7 @@ var app = {
     receivedEvent: function(id) {
 
     ClearDirectory();
-    
+
     function timeEnd() {
         $.mobile.changePage('#time-end', 'pop', true, true);
     }
@@ -302,6 +302,7 @@ var app = {
 }
 
 function ClearDirectory(localData) {
+    alert('1');
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
 
     function fail(evt) {
@@ -309,6 +310,7 @@ function ClearDirectory(localData) {
     }
     
     function onFileSystemSuccess(fileSystem) {
+        alert('2');
         fileSystem.root.getDirectory(
                 "teambuilding",
                 {create: true, exclusive: false},
