@@ -2626,12 +2626,41 @@
     </div>
 </div>
 
+<style type="text/css">
+    #text-order .ui-dialog-contain {
+    width: 92.5%;
+    max-width: 1500px;
+    margin: 10% auto 15px auto;
+    padding: 0;
+    position: relative;
+    top: -15px;
+}
+</style>
+
+<div data-role="dialog" id="text-order" data-close-btn="right"  >
+    <div data-role="header">
+        <h1>People Choice order</h1>
+    </div>
+    <div data-role="content">
+        <div style="width:100%;float:left;" class="text-order-html"></div>
+    </div>
+</div>
+
 <div data-role="dialog" id="text-carpenter" data-close-btn="right"  >
     <div data-role="header">
         <h1>Вашата подредба</h1>
     </div>
     <div data-role="content">
    		<div style="width:100%;" class="text-display"></div>
+    </div>
+</div>
+
+<div data-role="dialog" id="wrong-input" data-close-btn="right"  >
+    <div data-role="header">
+        <h1>Wrong selection</h1>
+    </div>
+    <div data-role="content">
+        Има дублиране на позицията. Моля, подредете всеки участник от 1 до 6 без повтаряне!
     </div>
 </div>
 
@@ -3452,7 +3481,7 @@
                     Мали е добър професионалист. Имал е сблъсъци с мениджмънта относно правата на работниците.
             </td>
                <td style="padding:10px;border:1px solid #d8d8d8;">
-                   <select id="text-6">
+                   <select id="choise-1">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3463,7 +3492,7 @@
                </td>
            </tr>
            <tr>
-               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="text-1" style="height:500px;"></textarea></td>
+               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="choise-1-t" style="height:500px;"></textarea></td>
            </tr>
        </table>
 
@@ -3475,7 +3504,7 @@
                 Има 2-годишен стаж във фирмата. Изкарала е допълнителни курсове като медицинска сестра. Има три деца, за които се грижи сама. Има добро досие, но допуска дребни грешки в работата си.
             </td>
                <td style="padding:10px;border:1px solid #d8d8d8;">
-                   <select id="text-6">
+                   <select id="choise-2">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3486,7 +3515,7 @@
                </td>
            </tr>
            <tr>
-               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="text-1" style="height:500px;"></textarea></td>
+               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="choise-2-t" style="height:500px;"></textarea></td>
            </tr>
        </table>
        <br />
@@ -3499,7 +3528,7 @@
                 Последните два месеца много често отсъства. Спечелил е няколко награди за оптимизация и справяне с кризи.
             </td>
                <td style="padding:10px;border:1px solid #d8d8d8;">
-                   <select id="text-6">
+                   <select id="choise-3">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3510,7 +3539,7 @@
                </td>
            </tr>
            <tr>
-               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="text-1" style="height:500px;"></textarea></td>
+               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="choise-3-t" style="height:500px;"></textarea></td>
            </tr>
        </table>
        <br />
@@ -3522,7 +3551,7 @@
                 Наскоро се е омъжила за един от топ мениджърите на компанията. Бивш модел. В компанията от година. Често отсъства. Не се справя добре със задачите, но има отлично отношение към клиентите и много похвали и благодарствени писма от тях.
             </td>
                <td style="padding:10px;border:1px solid #d8d8d8;">
-                   <select id="text-6">
+                   <select id="choise-4">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3533,7 +3562,7 @@
                </td>
            </tr>
            <tr>
-               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="text-1" style="height:500px;"></textarea></td>
+               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="choise-4-t" style="height:500px;"></textarea></td>
            </tr>
        </table>
        <br />
@@ -3545,7 +3574,7 @@
                 От 6-месеца е в компанията. Наскоро е напуснала високо платена и престижна работа, за да стане част от тази компания. Най-висока оценка в Центъра за оценка при подбора. Говори перфектно 4 езика. С висок потенциал. Знаете, че е болна от СПИН. 
             </td>
                <td style="padding:10px;border:1px solid #d8d8d8;">
-                   <select id="text-6">
+                   <select id="choise-5">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3556,7 +3585,7 @@
                </td>
            </tr>
            <tr>
-               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="text-1" style="height:500px;"></textarea></td>
+               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="choise-5-t" style="height:500px;"></textarea></td>
            </tr>
        </table>
        <br />
@@ -3568,7 +3597,7 @@
                 От 15 години е в компанията. Женен, с три деца. Знае много неща и пренася знанието към новите служители. Напоследък доста мързелив и често отсъства. Женен, с три деца.
             </td>
                <td style="padding:10px;border:1px solid #d8d8d8;">
-                   <select id="text-6">
+                   <select id="choise-6">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -3579,7 +3608,7 @@
                </td>
            </tr>
            <tr>
-               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="text-1" style="height:500px;"></textarea></td>
+               <td colspan="3" style="padding:10px;border:1px solid #d8d8d8;"><textarea id="choise-6-t" style="height:500px;"></textarea></td>
            </tr>
        </table>
        <div style="overflow: hidden;">
@@ -3784,6 +3813,43 @@
             }
         });
     });
+    
+    $('#people-choise').bind("pageshow", function (event, data) {
+        $('#people-choise').find('button').unbind('click').click(function(){
+            
+            var selected = [0,0,0,0,0,0];
+
+            var choise1 = $('#choise-1');
+            var choise2 = $('#choise-2');
+            var choise3 = $('#choise-3');
+            var choise4 = $('#choise-4');
+            var choise5 = $('#choise-5');
+            var choise6 = $('#choise-6');
+
+            selected[choise1.val() - 1] = {'text' : $('#choise-1-t').val(), 'name' : 'Мали' };
+            selected[choise2.val() - 1] = {'text' : $('#choise-2-t').val(), 'name' : 'Ава' };
+            selected[choise3.val() - 1] = {'text' : $('#choise-3-t').val(), 'name' : 'Ник' };
+            selected[choise4.val() - 1] = {'text' : $('#choise-4-t').val(), 'name' : 'Леонор' };
+            selected[choise5.val() - 1] = {'text' : $('#choise-5-t').val(), 'name' : 'Арина' };
+            selected[choise6.val() - 1] = {'text' : $('#choise-6-t').val(), 'name' : 'Мат' };
+
+            if (jQuery.inArray( 0, selected ) != -1 ) {
+                $.mobile.changePage('#wrong-input', 'pop', true, true);
+            } else {
+
+                var html = '';
+                var count = 1;
+                $.each(selected, function( index, value ) {
+                    html += '<h4 style="margin-bottom: 5px;">' + count + '. ' + value.name + '</h4><div style="border-bottom:1px solid #d8d8d8;padding-bottom: 5px;">' + value.text + '</div>';
+                    count++;
+                });
+
+                $('.text-order-html').html(html);
+                $.mobile.changePage('#text-order', 'pop', true, true);
+            }
+        });     
+    });
+
     
     $('#sell-green').bind("pageshow", function (event, data) {
         $('.counter-green').countdown({
