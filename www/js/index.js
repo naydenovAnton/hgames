@@ -22,6 +22,7 @@ var app = {
     }
 
     function gotFile(file){
+        alert('da');
         readAsText(file);
     }
 
