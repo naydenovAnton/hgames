@@ -1,80 +1,62 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <title>H-Vision</title>
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile.css">
+    <link rel="stylesheet" href="css/fonts.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+    
+    <style>
+        .table-apartanent {
+            border-collapse: collapse;
+        }
 
-    http://www.apache.org/licenses/LICENSE-2.0
+        .table-apartanent td {
+            border: 1px solid #000000;
+            text-align: center;
+        }
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-		<title>H-Vision</title>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" href="css/themes/default/jquery.mobile.css">
-		<link rel="stylesheet" href="css/fonts.css" type="text/css" charset="utf-8"/>
-		<link rel="stylesheet" href="css/custom.css">
-		<script src="js/jquery.js"></script>
-		<script src="js/jquery-ui.js"></script>
-		<script src="js/jquery.ui.touch-punch.min.js"></script>
-		<script src="js/jquery.mobile-1.4.0.min.js"></script>
-		
-		<style>
-			.table-apartanent {
-				border-collapse: collapse;
-			}
+        .demo {
+            font-family: 'Conv_Ticker Tape', Sans-Serif;
+            color: #B9C302;
+        }
 
-			.table-apartanent td {
-				border: 1px solid #000000;
-				text-align: center;
-			}
+        .sub {
+            color: black;
+            background-color: #B9C302;
+            padding: 5px;
+        }
 
-			.demo {
-				font-family: 'Conv_Ticker Tape', Sans-Serif;
-				color: #B9C302;
-			}
+        div[data-role=header] h1, div[data-role=footer] h4 {
+            font-family: 'Conv_Ticker Tape', Sans-Serif;
+        }
 
-			.sub {
-				color: black;
-				background-color: #B9C302;
-				padding: 5px;
-			}
+        .special {
+            font-family: 'Conv_Ticker Tape', Sans-Serif;
+            color: #B9C302;
+        }
 
-			div[data-role=header] h1, div[data-role=footer] h4 {
-				font-family: 'Conv_Ticker Tape', Sans-Serif;
-			}
+        div[data-role='header'] a {
+        	width: 70px;
+        }
 
-			.special {
-				font-family: 'Conv_Ticker Tape', Sans-Serif;
-				color: #B9C302;
-			}
+        .cntSeparator {
+		    color: #000000;
+		    font-size: 54px;
+		    margin: 10px 7px;
+		}
+    </style>
+</head>
+<body>
 
-			div[data-role='header'] a {
-				width: 70px;
-			}
 
-			.cntSeparator {
-				color: #000000;
-				font-size: 54px;
-				margin: 10px 7px;
-			}
-		</style>
-        
-    </head>
-    <body>
-		<!-- page start -->
+<!-- page start -->
 <div data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="H-Vision">
     <div data-role="header" data-position="fixed" data-theme="b" data-tap-toggle="false">
         <h1>H-Vision</h1>
@@ -82,7 +64,13 @@
     </div>
     <!-- /header -->
     <div role="main" class="ui-content jqm-content jqm-fullwidth">
-        <p><strong><h2 style="text-align:center;font-size: 35px;" class="demo">Тренинг програма за развитие на продажбени умения<br/><br/>Outstanding Customers Delight<sup>ТМ</sup></h2></strong></p>
+        <p>
+			<strong>
+				<h2 style="text-align:center;font-size: 35px;" class="demo">
+					<span id="frontText"></span>
+				</h2>
+			</strong>
+		</p>
     </div>
     <!-- /content -->
     <div data-role="footer" data-position="fixed" data-theme="b" data-tap-toggle="false">
@@ -197,6 +185,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -288,6 +278,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -374,6 +366,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
 
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
@@ -494,6 +488,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
 
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
@@ -555,6 +551,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -627,6 +625,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
 
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
@@ -698,6 +698,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -773,6 +775,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -847,6 +851,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -941,6 +947,8 @@
             <li><a href="#emails" data-transition="none">11. Emails </a></li>
             <li><a href="#chairs" data-transition="none">12. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -1239,6 +1247,8 @@
         <li><a href="#emails" data-transition="none">9. Emails </a></li>
         <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
         <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+		<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
         <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
     </ul>
 </div>
@@ -1353,6 +1363,8 @@
         <li><a href="#emails" data-transition="none">9. Emails </a></li>
         <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
         <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+		<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -1446,6 +1458,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -2114,6 +2128,8 @@
         <li><a href="#emails" data-transition="none">9. Emails </a></li>
         <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
         <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+		<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
         <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
     </ul>
 </div>
@@ -2610,6 +2626,15 @@
     </div>
 </div>
 
+<div data-role="dialog" id="text-carpenter" data-close-btn="right"  >
+    <div data-role="header">
+        <h1>Вашата подредба</h1>
+    </div>
+    <div data-role="content">
+   		<div style="width:100%;" class="text-display"></div>
+    </div>
+</div>
+
 <div data-role="dialog" id="text-client" data-close-btn="right"  >
     <div data-role="header">
         <h1>Dream Vacation</h1>
@@ -2686,6 +2711,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -2729,6 +2756,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -2772,6 +2801,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -2829,6 +2860,8 @@
             <li><a href="#emails" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -2871,6 +2904,8 @@
             <li><a href="#emails" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -2912,6 +2947,8 @@
             <li><a href="#emails" data-transition="none" >9. Emails </a></li>
             <li><a href="#chairs" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -2959,6 +2996,8 @@
             <li><a href="#emails" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3014,6 +3053,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3058,6 +3099,8 @@
             <li><a href="#emails" data-transition="none">11. Emails </a></li>
             <li><a href="#chairs" data-transition="none">12. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3102,6 +3145,8 @@
             <li><a href="#emails" data-transition="none">11. Emails </a></li>
             <li><a href="#chairs" data-transition="none">12. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3148,6 +3193,8 @@
             <li><a href="#emails" data-transition="none">11. Emails </a></li>
             <li><a href="#chairs" data-transition="none">12. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3192,6 +3239,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3236,6 +3285,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3279,6 +3330,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3320,6 +3373,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3365,6 +3420,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3549,7 +3606,9 @@
             <li><a href="#houses" data-transition="none" >8. Houses</a></li>
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
-            <li><a href="#business-trip" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">11. Business trip</a></li>
+            <li><a href="#business-trip" data-transition="none" >11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3610,7 +3669,10 @@
                     <li data-role="list-divider" role="heading">Годеникът на момичето</li>
                     <li data-role="list-divider" role="heading">Най-добрия приятел на годеника</li>
                 </ul>
-        </div>
+			</div>
+			<div style="overflow: hidden;padding-right: 15px;">
+				<button style="width: 150px;float: right" data-theme="b">Зареди</button>
+			</div>
     </div>
     <!-- /content -->
     <div data-role="footer" data-position="fixed" data-theme="b" data-tap-toggle="false">
@@ -3633,6 +3695,8 @@
             <li><a href="#emails" data-transition="none">9. Emails </a></li>
             <li><a href="#chairs" data-transition="none">10. Chairs </a></li>
             <li><a href="#business-trip" data-transition="none">11. Business trip</a></li>
+			<li><a href="#people-choise" data-transition="none">12. People Choice</a></li>
+            <li><a href="#carpenter" data-transition="none" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-btn-active">13. Girl and Carpenter</a></li>
             <!-- <li><a href="#feedback" data-transition="none">10. Feedback form</a></li> -->
         </ul>
     </div>
@@ -3650,20 +3714,43 @@
 		$.mobile.changePage('#time-end', 'pop', true, true);
 	}
 
+	$(document).delegate('.ui-page', 'pageshow', function () {
+		var frontText = 'Тренинг програма за развитие на продажбени умения<br/><br/>Outstanding Customers Delight<sup>ТМ</sup>';
+		$('#frontText').html(frontText);
+		var hidden = ['color', 'hotel'];
+		
+		$.each(hidden, function( index, value ) {
+			$('a[href="#' + value + '"]').closest('li').remove();
+		});
+	});
+	
     $('#carpenter').bind("pageshow", function (event, data) {
-        $('select-carpenter li').removeClass('ui-corner-bottom');
-    $('.select-carpenter')
-        .addClass('ui-corner-top')
-        .removeClass('ui-corner-all')
-        .sortable({
-            'containment': 'parent',
-            'opacity': 0.6,
+		
+		$('#carpenter').find('button').unbind('click').click(function(){
+			
+			var order = '';
+			count = 5;
+			$('.select-carpenter').find('li').each(function(){
+				order += '<h2> ' + count + '. ' + $(this).text() + '</h2>';
+				count--;
+			});
+			
+			$('.text-display').html(order);
+			$.mobile.changePage('#text-carpenter', 'pop', true, true);
+		}); 
+		
+		$('select-carpenter li').removeClass('ui-corner-bottom');
+		$('.select-carpenter')
+			.addClass('ui-corner-top')
+			.removeClass('ui-corner-all')
+			.sortable({
+				'containment': 'parent',
+				'opacity': 0.6,
             update: function(event, ui) {
             }
         });
     });
-
-
+	
     $('#sell-green').bind("pageshow", function (event, data) {
         $('.counter-green').countdown({
 	          image: 'img/digits.png',
@@ -3909,11 +3996,9 @@
 			}
     	})
     });
+
+
+    
 </script>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+</body>
 </html>
