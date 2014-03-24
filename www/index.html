@@ -3711,15 +3711,18 @@
     document.addEventListener("deviceready", onDeviceReady, false);
 
     function onDeviceReady() {
+        alert('1');
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
         window.resolveLocalFileSystemURI("file:///example.txt", onResolveSuccess, fail);
     }
 
     function onFileSystemSuccess(fileSystem) {
+        alert('2');
         console.log(fileSystem.name);
     }
 
     function onResolveSuccess(fileEntry) {
+        alert('3');
         console.log(fileEntry.name);
     }
 
