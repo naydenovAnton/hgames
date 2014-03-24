@@ -11,24 +11,37 @@ var app = {
     },
     receivedEvent: function(id) {
 
-        function storeIntelligrapeLogo(){
-            var url = "http://www.intelligrape.com/images/logo.png"; // image url
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-                var imagePath = fs.root.fullPath + "/logo.png"; // full file path
-                var fileTransfer = new FileTransfer();
-                fileTransfer.download(url, imagePath, function (entry) {
-                    console.log(entry.fullPath); // entry is fileEntry object
-                }, function (error) {
-                    console.log("Some error");
-                });
-            })
-        }
-        
-        storeIntelligrapeLogo();
-        
-        function timeEnd() {
-            $.mobile.changePage('#time-end', 'pop', true, true);
-        }
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("readme.txt", null, gotFileEntry, fail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
+
+    function gotFile(file){
+        readAsText(file);
+    }
+
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log("Read as text");
+            console.log(evt.target.result);
+        };
+        reader.readAsText(file);
+    }
+
+    function fail(evt) {
+        console.log(evt.target.error.code);
+    }
+
+
+    function timeEnd() {
+        $.mobile.changePage('#time-end', 'pop', true, true);
+    }
 
     var frontText = 'Тренинг програма за развитие на продажбени умения<br/><br/>Outstanding Customers Delight<sup>ТМ</sup>';
     $('#frontText').html(frontText);
