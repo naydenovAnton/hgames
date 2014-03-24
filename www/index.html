@@ -3712,11 +3712,16 @@
 
     function onDeviceReady() {
         alert('1');
-        //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
         window.resolveLocalFileSystemURI("file:///sdcard/readme.txt", onResolveSuccess, fail);
     }
 
+    function onFileSystemSuccess(fileSystem) {
+        console.log(fileSystem.name);
+    }
+
     function onResolveSuccess(fileEntry) {
+        alert('3');
         fileEntry.file(gotFile, fail);
     }
 
@@ -3727,6 +3732,7 @@
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
+            console.log(evt.target.result);
             var result = evt.target.result;
             var res = result.split("::");
             console.log(res); 
