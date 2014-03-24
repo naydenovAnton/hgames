@@ -11,35 +11,8 @@ var app = {
     },
     receivedEvent: function(id) {
 
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    ClearDirectory();
     
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("readme.txt", null, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
-    }
-
-    function gotFile(file){
-        alert('da');
-        readAsText(file);
-    }
-
-    function readAsText(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as text");
-            console.log(evt.target.result);
-        };
-        reader.readAsText(file);
-    }
-
-    function fail(evt) {
-        console.log(evt.target.error.code);
-    }
-
-
     function timeEnd() {
         $.mobile.changePage('#time-end', 'pop', true, true);
     }
@@ -325,5 +298,34 @@ var app = {
             }
         })
     });
+    }
+}
+
+function ClearDirectory(localData) {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+
+    function fail(evt) {
+        alert("FILE SYSTEM FAILURE" + evt.target.error.code);
+    }
+    
+    function onFileSystemSuccess(fileSystem) {
+        fileSystem.root.getDirectory(
+                "teambuilding",
+                {create: true, exclusive: false},
+        function(entry) {
+            console.log('entry');
+            entry.removeRecursively(function() {
+                console.log('entry');
+                //var localData = JSON.parse(window.localStorage.getItem('configTeambuilding'));
+                //if (parseInt(localData.welcome.type, 10) === 1) {
+                //    downloadFile(localData.welcome.image, 'welcome/image/welcome.png');
+                //} else if (parseInt(localData.welcome.type) === 2) {
+                //    downloadFile(localData.welcome.video, 'welcome/video/welcome.mp4');
+                //} else {
+                //    alert('Unsuported upload!');
+                //    $.mobile.loading('hide');
+                //}
+            }, fail);
+        }, fail);
     }
 }
