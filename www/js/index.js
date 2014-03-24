@@ -14,16 +14,15 @@ var app = {
         $.mobile.changePage('#time-end', 'pop', true, true);
     }
 
-    $(document).delegate('.ui-page', 'pageshow', function () {
-        var frontText = 'Тренинг програма за развитие на продажбени умения<br/><br/>Outstanding Customers Delight<sup>ТМ</sup>';
-        $('#frontText').html(frontText);
-        var hidden = ['color', 'hotel'];
-        
-        $.each(hidden, function( index, value ) {
-            $('a[href="#' + value + '"]').closest('li').remove();
-        });
-    });
+    var frontText = 'Тренинг програма за развитие на продажбени умения<br/><br/>Outstanding Customers Delight<sup>ТМ</sup>';
+    $('#frontText').html(frontText);
     
+    var hidden = ['color', 'hotel'];
+        
+    $.each(hidden, function( index, value ) {
+        $('a[href="#' + value + '"]').closest('li').remove();
+    });
+
     $('#carpenter').bind("pageshow", function (event, data) {
         
         $('#carpenter').find('button').unbind('click').click(function(){
