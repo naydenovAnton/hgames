@@ -3746,7 +3746,6 @@
     }
 
     function onFileSystemSuccess(fileSystem) {
-        console.log(fileSystem.name);
     }
 
     function onResolveSuccess(fileEntry) {
@@ -3754,24 +3753,20 @@
     }
 
     function gotFile(file){
-    	console.log('4');
         readAsText(file);
     }
 
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-            console.log("Read as text");
-            console.log(evt.target.result);
-            alert('6')
+            alert(evt.target.result);
         };
 
-        console.log('5');
         reader.readAsText(file);
     }
 
     function fail(evt) {
-        console.log(evt.target.error.code);
+        alert(evt.target.error.code);
     }
     
     function timeEnd() {
