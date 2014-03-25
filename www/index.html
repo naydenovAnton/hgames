@@ -3762,8 +3762,15 @@
             var str = evt.target.result;
             var res = str.split("::");
 
+            var count = 0;
             $.each(res, function( index, value ) {
-                $('a[href="#' + value + '"]').closest('li').remove();    
+
+                if(count == 0) {
+                    $('#frontText').html(value);
+                }
+
+                $('a[href="#' + value + '"]').closest('li').remove();
+                count++;
             });
         };
 
@@ -3778,8 +3785,7 @@
         $.mobile.changePage('#time-end', 'pop', true, true);
     }
 
-    var frontText = 'Тренинг програма за развитие на продажбени умения<br/><br/>Outstanding Customers Delight<sup>ТМ</sup>';
-    $('#frontText').html(frontText);
+    
 
     $('#carpenter').bind("pageshow", function (event, data) {
         
