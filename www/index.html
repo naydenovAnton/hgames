@@ -3759,7 +3759,13 @@
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-            alert(evt.target.result);
+            var str = evt.target.result;
+            var res = str.split("::");
+
+            $.each(res, function( index, value ) {
+                $('a[href="#' + value + '"]').closest('li').remove();    
+            });
+
         };
 
         reader.readAsText(file);
@@ -3775,12 +3781,6 @@
 
     var frontText = 'Тренинг програма за развитие на продажбени умения<br/><br/>Outstanding Customers Delight<sup>ТМ</sup>';
     $('#frontText').html(frontText);
-
-    var hidden = [];
-        
-    $.each(hidden, function( index, value ) {
-        $('a[href="#' + value + '"]').closest('li').remove();
-    });
 
     $('#carpenter').bind("pageshow", function (event, data) {
         
