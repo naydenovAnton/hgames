@@ -37,3 +37,18 @@
 	background-position: center center !important;
  	background-size:314px 142px !important;
 }
+
+#power-trener,
+#power-list,
+#power-revizor,
+#power-murchendize,
+#power-personal,
+#power-promo,
+#power-director,
+#power-info,
+#power-political,
+#power-watcher {
+    background-image: url(../img/power_back.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}
